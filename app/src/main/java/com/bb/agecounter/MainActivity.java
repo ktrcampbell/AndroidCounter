@@ -9,10 +9,11 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView showCounter;
-    Button bIncrement;
-    Button bDecrement;
-    TextView display;
+    TextView showCounterTextView;
+    Button incrementButton;
+    Button decrementButton;
+    Button resetButton;
+    TextView displayTextView;
 
     int counter = 0;
     int max = 100;
@@ -22,46 +23,38 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        showCounter = findViewById(R.id.count);
-        bIncrement = findViewById(R.id.btn_inc);
-        bDecrement = findViewById(R.id.btn_dec);
+        showCounterTextView = findViewById(R.id.count_textview);
+        incrementButton = findViewById(R.id.increment_button);
+        decrementButton = findViewById(R.id.decrement_button);
+        resetButton = findViewById(R.id.reset_button);
 
-        showCounter.setText("0");
+        showCounterTextView.setText("0");
 
-        bIncrement.setOnClickListener(new View.OnClickListener() {
+        incrementButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                counter++;
-                if(counter < 1){
-                    display.setText("Newborn");}
-                    else if(counter > 1 & counter < 12){
-                        display.setText("Child");}
-                    else if(counter > 13 & counter < 18){
-                        display.setText("Teen");}
-                    else{
-                        display.setText("Adult");
-                }
-                showCounter.setText(String.valueOf(counter));
+
+                counter = counter +1;
+                showCounterTextView.setText(String.valueOf(counter));
+
             }
 
         });
-        bDecrement.setOnClickListener(new View.OnClickListener() {
+
+        decrementButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                counter = counter-1;
+                showCounterTextView.setText(String.valueOf(counter));
+        }
+        });
+
+        resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                counter--;
-                if (counter < 1) {
-                    display.setText("Newborn");
-                } else if (counter > 1 & counter < 12) {
-                    display.setText("Child");
-                } else if (counter > 13 & counter < 18) {
-                    display.setText("Teen");
-                } else if (counter > 18 & counter < max) {
-                    display.setText("Adult");
-                }
-
-                showCounter.setText(String.valueOf(counter));
-                }
-
+                 counter = 0;
+                showCounterTextView.setText(String.valueOf(counter));
+            }
         });
     }
 }
