@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AgeCounter</string>
+    <string name="message">%s</string>
 </resources>

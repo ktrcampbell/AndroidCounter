@@ -30,6 +30,8 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="16dp"
         android:textSize="50sp"
+        android:text="NewBorn"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/count_textview" />
@@ -41,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="Increment"
+        android:padding="6dp"
         app:layout_constraintTop_toBottomOf="@id/display_message_textview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -52,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="Decrement"
+        android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/increment_button"/>
